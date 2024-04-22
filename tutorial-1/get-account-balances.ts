@@ -13,4 +13,4 @@ async function getAccountBalances() {
   return balance;
 }
 
-getAccountBalance().then(console.log).catch(console.error);
+getAccountBalances().then(console.log).catch(console.error);
