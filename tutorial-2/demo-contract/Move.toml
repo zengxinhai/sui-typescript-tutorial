@@ -1,0 +1,13 @@
+[package]
+name = "demo"
+version = "0.0.1"
+edition = "2024.beta"
+published-at = "0x941a014e9254f98dbe43fe5ed2224d6cf0f60a1476a460fd4549962da043700a"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "mainnet"
+
+[addresses]
+demo = "0x941a014e9254f98dbe43fe5ed2224d6cf0f60a1476a460fd4549962da043700a"
