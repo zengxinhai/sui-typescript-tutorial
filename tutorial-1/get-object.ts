@@ -9,8 +9,13 @@ async function getObject() {
   const objectId = '0xfff7c613d39a609ff58ff460c370feb1882eccf903dedb107b08d9cec1ac1b63';
   const objectInfo = await client.getObject({
     id: objectId,
+    options: { showDisplay: true, showType: true, showContent: true }
   });
-  return objectInfo;
+  // 解析object业务字段
+  const objectContent = (objectInfo as any).data.content;
+  // 解析object样式字段
+  const displayData = (objectInfo as any).data.display;
+  return { displayData, objectContent };
 }
 
 getObject().then(console.log).catch(console.error);
