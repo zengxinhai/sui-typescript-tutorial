@@ -5,8 +5,10 @@ import { suiClient, signer } from './sui-elements';
 async function moneyTransfer() {
   /** 组织交易数据 **/
   const tx = new TransactionBlock();
-  const objectId = ''; // 将要转移归属权的Object
-  const recipient = ''; // 接收方账户地址
+  // 将要转移归属权的Object ID
+  const objectId = '';
+  // 接收方账户地址
+  const recipient = '';
   tx.transferObjects([objectId], recipient); // 支持一次性转移多个Object
 
   /** 发起交易 **/
@@ -15,6 +17,7 @@ async function moneyTransfer() {
     signer,
     transactionBlock: tx,
   });
+  return result;
 }
 
 moneyTransfer().then(console.log).catch(console.error);
